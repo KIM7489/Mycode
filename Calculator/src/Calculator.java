@@ -27,7 +27,7 @@ public class Calculator extends JFrame implements ActionListener {
 		
 	}
 	public void CalculatorContain() {
-		setTitle("계산기//");
+		setTitle("계산기..1");
 		super.setResizable(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
