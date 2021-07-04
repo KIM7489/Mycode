@@ -15,7 +15,7 @@ import javax.swing.JPanel;
 
 public class CalendarTest extends JFrame implements ActionListener {
 	Calendar cal = Calendar.getInstance();
-	
+	//Å×½ºÆ®
 	JPanel panNorth = new JPanel();
 	JPanel panCenter = new JPanel();
 	
