@@ -116,6 +116,7 @@ public class CalendarTest extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		  
 		  remove(panCenter);
+		  setVisible(false);
 		  panCenter = new JPanel();
 		  panCenter.setLayout(new GridLayout(6,7));
 		  
@@ -159,5 +160,6 @@ public class CalendarTest extends JFrame implements ActionListener {
 	}
 		 
 		  add(panCenter,BorderLayout.CENTER);
+		  setVisible(true);
 }
 }
