@@ -18,7 +18,8 @@ public class CalendarTest extends JFrame implements ActionListener {
 	//테스트
 	JPanel panNorth = new JPanel();
 	JPanel panCenter = new JPanel();
-	
+	JButton btn1;
+	JButton btn2;
 	JLabel j1;
 	JLabel j2;
 	JLabel j3;
@@ -26,8 +27,8 @@ public class CalendarTest extends JFrame implements ActionListener {
 	int add1 = 1950;
 	int nowYear = cal.get(Calendar.YEAR);
 	int nowMonth = cal.get(Calendar.MONTH);
-	int comboSet1;
-	int comboSet2; 
+	int comboSet1 = nowYear - 1950;
+	int comboSet2 = nowMonth;
 	
 	String month[] = {"1","2","3","4","5","6","7","8","9","10","11","12"};
 	
@@ -55,6 +56,8 @@ public class CalendarTest extends JFrame implements ActionListener {
 // 버튼생성 
 	  JButton btn1 = new JButton("<==");
 	  JButton btn2 = new JButton("==>");
+	  btn1.addActionListener(this);
+	  btn2.addActionListener(this);
 	  panNorth.setBackground((Color.GREEN));
 	  comboBtn1 = new JComboBox(year);
 	  comboBtn2 = new JComboBox(month);
@@ -73,8 +76,6 @@ public class CalendarTest extends JFrame implements ActionListener {
 	  
 // 콤보 박스 초기값  현제 년 월
 	  
-	  comboSet1 = nowYear - 1950;
-	  comboSet2 = nowMonth;
 	  comboBtn1.setSelectedIndex(comboSet1);
 	  comboBtn2.setSelectedIndex(comboSet2);
 
@@ -103,12 +104,27 @@ public class CalendarTest extends JFrame implements ActionListener {
 		  
 		  String year = comboBtn1.getSelectedItem().toString();
 		  String month = comboBtn2.getSelectedItem().toString();
-		 
+		  String input = e.getActionCommand();
+		  
+		  
+		  
+		  if(input.equals("<==")) {
+			  setVisible(false);
+			  comboSet1++;
+			  comboBtn1.setSelectedIndex(comboSet1);
+			  setVisible(true);
+		  }else if(input.equals("==>")) {
+			  setVisible(false);
+			  comboBtn2.setSelectedIndex(comboSet2);
+			  setVisible(true);
+		  }else {
+		  
 		  int year1 = Integer.valueOf(year);
 		  int month1 = Integer.valueOf(month);
 		  int day1 = 1;
+		  comboSet1 = year1 - 1950;
+		  comboSet2 = month1;
 		  cal.set(year1,month1-1,day1);
-		 
 		  int lastDay = cal.getActualMaximum(Calendar.DAY_OF_MONTH); // 마지막 월
 		  int week = cal.get(Calendar.DAY_OF_WEEK); // 현제 요일
 		 
@@ -152,10 +168,12 @@ public class CalendarTest extends JFrame implements ActionListener {
 						panCenter.add(j3);
 						day1++;
 				 }
+			  
 			  }
 	}
 		 
 		  add(panCenter,BorderLayout.CENTER);
 		  setVisible(true);
+		  }
 }
 }
