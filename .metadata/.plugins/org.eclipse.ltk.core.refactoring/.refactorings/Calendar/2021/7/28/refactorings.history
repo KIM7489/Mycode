@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename field &apos;panCenter&apos; in &apos;CalendarTest&apos; to &apos;panSouth&apos;&#x0D;&#x0A;- Original project: &apos;Calendar&apos;&#x0D;&#x0A;- Original element: &apos;CalendarTest.panCenter&apos;&#x0D;&#x0A;- Renamed element: &apos;CalendarTest.panSouth&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" delegate="false" deprecate="false" description="Rename field &apos;panCenter&apos;" flags="589830" getter="false" id="org.eclipse.jdt.ui.rename.field" input="/src&lt;{CalendarTest.java[CalendarTest^panCenter" name="panSouth" references="true" setter="false" stamp="1625548985084" textual="false" version="1.0"/>
+</session>
